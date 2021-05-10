@@ -1,0 +1,14 @@
+{
+    "Servers": {
+        "1": {
+            "Name": "binance",
+            "Group": "Servers",
+            "Host": "postgres",
+            "Port": 5432,
+            "MaintenanceDB": "postgres",
+            "Username": "postgres",
+            "SSLMode": "prefer",
+            "Timeout": 5
+        }
+    }
+}
