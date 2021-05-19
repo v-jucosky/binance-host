@@ -3,6 +3,7 @@ version: "3.8"
 services:
     postgres:
         image: postgres
+        container_name: postgres
         ports:
             - 5432:5432
         shm_size: '1GB'
@@ -14,6 +15,7 @@ services:
             - postgres-network
     pgadmin:
         image: dpage/pgadmin4
+        container_name: pgadmin
         ports:
             - 15432:80
         environment:
