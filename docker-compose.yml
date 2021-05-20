@@ -27,6 +27,19 @@ services:
             - postgres-network
         depends_on:
             - postgres
+    grafana:
+        image: grafana/grafana
+        container_name: grafana
+        ports:
+            - 3000:3000
+        environment:
+            GF_SECURITY_ADMIN_PASSWORD: "grafana"
+            GF_SECURITY_ADMIN_USER: "grafana"
+            GF_USERS_DEFAULT_THEME: "light"
+            GF_ANALYTICS_REPORTING_ENABLED: "false"
+            GF_SNAPSHOTS_EXTERNAL_ENABLED: "false"
+        networks:
+            - postgres-network
 
 networks:
     postgres-network:
