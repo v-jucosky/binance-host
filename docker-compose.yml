@@ -1,4 +1,4 @@
-version: "3.8"
+version: '3.8'
 
 services:
     postgres:
@@ -6,7 +6,7 @@ services:
         container_name: postgres
         ports:
             - 5432:5432
-        shm_size: '1GB'
+        shm_size: 1GB
         environment:
             POSTGRES_PASSWORD: postgres
         volumes:
@@ -19,8 +19,8 @@ services:
         ports:
             - 15432:80
         environment:
-            PGADMIN_DEFAULT_EMAIL: "pgadmin@pgadmin.com"
-            PGADMIN_DEFAULT_PASSWORD: "pgadmin"
+            PGADMIN_DEFAULT_EMAIL: pgadmin@pgadmin.com
+            PGADMIN_DEFAULT_PASSWORD: pgadmin
         volumes:
             - ./host/servers.json:/pgadmin4/servers.json
         networks:
@@ -33,11 +33,11 @@ services:
         ports:
             - 3000:3000
         environment:
-            GF_SECURITY_ADMIN_PASSWORD: "grafana"
-            GF_SECURITY_ADMIN_USER: "grafana"
-            GF_USERS_DEFAULT_THEME: "light"
-            GF_ANALYTICS_REPORTING_ENABLED: "false"
-            GF_SNAPSHOTS_EXTERNAL_ENABLED: "false"
+            GF_SECURITY_ADMIN_PASSWORD: grafana
+            GF_SECURITY_ADMIN_USER: grafana
+            GF_USERS_DEFAULT_THEME: light
+            GF_ANALYTICS_REPORTING_ENABLED: 'false'
+            GF_SNAPSHOTS_EXTERNAL_ENABLED: 'false'
         networks:
             - postgres-network
 
